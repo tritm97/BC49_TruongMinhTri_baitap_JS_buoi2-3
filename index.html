@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>baitap_JS_buoi2-3</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- index.css  -->
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <section class="tabs-wrapper">
+          <div class="tabs-container">
+            <div class="tabs-block">
+              <div class="tabs">
+                <input type="radio" name="tabs" id="tab1" checked="checked" />
+                <label for="tab1"><span class="material-icons">favorite_border</span> Bài 1</label>
+                <div class="tab">
+                  <h2>Tính tiền lương nhân viên</h2>
+                  <p>
+                    * Mô hình 3 khối: <br>
+                    - Đầu vào: Mức tiền lương 1 ngày và số ngày làm việc của nhân viên <br>
+                    - Các bước xử lý: Lương của nhân viên = Mức tiền lương 1 ngày * Số ngày làm việc <br>
+                    - Đầu ra: Lương của nhân viên
+                  </p>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Tiền lương 1 ngày</label>
+                    <input type="number" min="0"
+                      class="form-control" name="" id="luongMotNgay" aria-describedby="helpId" placeholder=" Nhập tiền lương 1 ngày">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Số ngày làm việc</label>
+                    <input type="number" min="0"
+                      class="form-control" name="" id="soNgayLam" aria-describedby="helpId" placeholder="Nhập số ngày làm việc">
+                  </div>
+                  <button class="btn btn-primary ketQua" id="tinhLuong">Tính lương nào..!</button>
+                  <div id="tienLuong"></div>
+                </div>
+  
+                <input type="radio" name="tabs" id="tab2" />
+                <label for="tab2"><span class="material-icons">face</span> Bài 2</label>
+                <div class="tab">
+                    <h2>Tính giá trị trung bình</h2>
+                    <p>
+                      * Mô hình 3 khối: <br>
+                      - Đầu vào: 5 số thực được nhập vào <br>
+                      - Các bước xử lý: Giá trị trung bình của 5 số thực = Tổng của 5 số thực / 5 <br>
+                      - Đầu ra: Giá trị trung bình của 5 số thực
+                    </p>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Tính giá trị trung bình các số sau:</label>
+                        <input type="number"
+                        class="form-control my-3" name="" id="soThuNhat" aria-describedby="helpId" placeholder=" Nhập số thứ nhất">
+                        <input type="number"
+                        class="form-control my-3" name="" id="soThuHai" aria-describedby="helpId" placeholder="Nhập số thứ hai">
+                        <input type="number"
+                        class="form-control my-3" name="" id="soThuBa" aria-describedby="helpId" placeholder=" Nhập số thứ ba">
+                        <input type="number"
+                        class="form-control my-3" name="" id="soThuTu" aria-describedby="helpId" placeholder="Nhập số thứ tư">
+                        <input type="number"
+                        class="form-control my-3" name="" id="soThuNam" aria-describedby="helpId" placeholder="Nhập số thứ năm">
+                    </div>
+
+                    <button class="btn btn-primary ketQua" id="tinhTrungBinh">Tính ngay..!</button>
+                    <div id="giaTriTrungBinh"></div>
+                </div>
+  
+                <input type="radio" name="tabs" id="tab3" />
+                <label for="tab3"><span class="material-icons">lightbulb</span> Bài 3</label>
+                <div class="tab">
+                    <h2>Quy đổi tiền</h2>
+                    <p>
+                      * Mô hình 3 khối: <br>
+                      - Đầu vào: Số tiền USD cần quy đổi <br>
+                      - Các bước xử lý: Số tiền VNĐ sau quy đổi = Số tiền USD cần quy đổi * Giá trị USD hiện nay <br>
+                      - Đầu ra: Số tiền VNĐ sau quy đổi
+                    </p>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Số tiền USD cần quy đổi</label>
+                      <input type="number" min="0"
+                        class="form-control" name="" id="soTienUSD" aria-describedby="helpId" placeholder=" Nhập số tiền USD cần quy đổi">
+                    </div>
+                    <button class="btn btn-primary ketQua" id="tinhTien">Quy đổi ngay..!</button>
+                    <div id="tienVND"></div>
+                </div>
+  
+                <input type="radio" name="tabs" id="tab4" />
+                <label for="tab4"><span class="material-icons">grade</span> Bài 4</label>
+                <div class="tab">
+                    <h2>Tính chu vi, diện tích hình chữ nhật</h2>
+                    <p>
+                      * Mô hình 3 khối: <br>
+                      - Đầu vào: Chiều dài, chiều rộng của hình chữ nhật <br>
+                      - Các bước xử lý: <br>
+                      + Chu vi hình chữ nhật = (Chiều dài + Chiều rộng) * 2 <br>
+                      + Diện tích hình chữ nhật = Chiều dài * Chiều rộng <br>
+                      - Đầu ra: Chu vi, diện tích của hình chữ nhật
+                    </p>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Chiều dài</label>
+                      <input type="number" min="0"
+                        class="form-control" name="" id="chieuDai" aria-describedby="helpId" placeholder=" Nhập chiều dài hình chữ nhật">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Chiều rộng</label>
+                        <input type="number" min="0"
+                          class="form-control" name="" id="chieuRong" aria-describedby="helpId" placeholder=" Nhập chiều rộng hình chữ nhật">
+                      </div>
+                    <button class="btn btn-primary ketQua" id="tinhToan">Cho cái thông số nè..!</button>
+                    <div id="chuVi"></div>
+                    <div id="dienTich"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+
+    <script src="./js/index.js"></script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
