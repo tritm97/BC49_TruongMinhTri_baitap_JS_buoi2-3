@@ -74,3 +74,44 @@ document.getElementById('tinhToan').onclick = function () {
         document.getElementById('dienTich').innerHTML = `Diện tích là ${dienTich}`;
     }
 }
+
+// Bài 5: Tính tổng 2 ký số
+
+document.getElementById('tinhTong').onclick = function () {
+    var soNhapVao = document.getElementById('soNhapVao').value * 1;
+
+    var soHangChuc = Math.floor(soNhapVao / 10);
+    var soHangDonVi = 0;
+    var tongHaiKySo = 0;
+    var soNhapVaoAm = 0;
+
+    //Trường hợp số nhập vào >= 0 và có <= 2 chữ số
+    if (soNhapVao >= 0 && soHangChuc <= 9) {
+        soHangDonVi = soNhapVao % 10;
+        soHangChuc = Math.floor(soNhapVao / 10);
+        tongHaiKySo = soHangDonVi + soHangChuc;
+        document.getElementById('tongLa').innerHTML = `Tổng 2 ký số của số bạn vừa nhập là ${tongHaiKySo}`;
+    }
+    //Trường hợp số nhập vào >= 0 và có > 2 chữ số
+    if (soNhapVao >= 0 && soHangChuc >= 10) {
+        document.getElementById('tongLa').innerHTML = `Tổng 2 ký số của số bạn vừa nhập là 0`;
+        alert('Số bạn vừa nhập vào có nhiều hơn 2 chữ số rồi');
+    }
+    //Trường hợp số nhập vào < 0
+    if (soNhapVao < 0) {
+        soNhapVaoAm = - soNhapVao;
+        soHangChuc = Math.floor(soNhapVaoAm / 10);
+        // và có <= 2 chữ số
+        if (soHangChuc <= 9) {
+            soHangDonVi = soNhapVaoAm % 10;
+            soHangChuc = Math.floor(soNhapVaoAm / 10);
+            tongHaiKySo = soHangDonVi + soHangChuc;
+            document.getElementById('tongLa').innerHTML = `Tổng 2 ký số của số bạn vừa nhập là ${tongHaiKySo}`;
+        }
+        // và có > 2 chữ số
+        if (soHangChuc >= 10) {
+            document.getElementById('tongLa').innerHTML = `Tổng 2 ký số của số bạn vừa nhập là 0`;
+            alert('Số bạn vừa nhập vào có nhiều hơn 2 chữ số rồi');
+        }
+    }
+}
